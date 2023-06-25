@@ -99,3 +99,102 @@ echo $key . "um ba laaaa";
     
 
 ?>
+
+
+
+//**********************************************************************************************************
+//GOOD DRAF DONT DELETE
+
+
+<?php
+// 	echo "Hello, World!";
+	
+	$array_sample = array();
+  $array_sample["DB05"]["webshare"] = "HELLO";
+  $array_sample["DB10"]["webshare"] = "\\\\prodsan-okc-m\\QAWSSH$\\OKC\\DB91\\";
+  $array_sample["DB10"]["clientstr"] = "0FK00";
+  $array_sample["DB11"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB91\\";
+  $array_sample["DB11"]["clientstr"] = "0AA00";
+  $array_sample["DB12"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB91\\";
+  $array_sample["DB12"]["clientstr"] = "02600";
+  
+  $input = readline(" Enter the client code with 5 digits: ")
+  function webshare_path($input){
+    if(strlen($input) == 5){
+      if($input[0] === '0'){
+        if('0' <= $input <='9999'){
+          foreach($array_sample as $key => $value){
+          echo $key;
+          foreach($value as $subkey => $cc_code){
+            echo $subkey;
+            if($cc_code === $input ){
+              echo $cc_code;
+              echo "HElloo dummy" . $key;
+              echo $array_sample[$key]["webshare"];
+            }
+          }
+        }
+        }
+      }
+      elseif($input[0] === '1'){
+        foreach($array_sample as $key => $value){
+          echo $key;
+          foreach($value as $subkey => $cc_code){
+            echo $subkey;
+            if($cc_code === $input ){
+              echo $cc_code;
+              echo "HElloo dummy" . $key;
+              echo $array_sample[$key]["webshare"];
+            }
+          }
+        }
+      }
+    }
+    else{
+    echo "Input error";
+  }
+}
+  
+//   $result = array_filter($this->request->post['clientstr'], function($value, $key){
+//     return $value["clientstr"] === '0AA00';
+// }, ARRAY_FILTER_USE_BOTH);
+
+// print_r(array_keys($result));
+
+// var_dump(array_filter($array_sample, function($v, $k) {
+//     return $k == '0AA00' || $v == 'clientstr';
+// }, ARRAY_FILTER_USE_BOTH));
+
+// 	foreach($array_sample as $keys){
+//     //echo "jjjjjjjjjjjjjjj ". $keys['client'];
+//     //print_r($keys['client']);
+//     //echo gettype($keys);
+//     print_r($keys);
+//     echo "iam here baby" . $keys["clientstr"];
+//     if($keys["clientstr"] === '0AA00'){
+//       echo "get the keys! Come on! " ;
+//       //($keys["clientstr"]);
+      
+//       //print_r(array_keys($keys["clientstr"]));
+//       //echo gettype(array_keys($keys["clientstr"] === '0AA00'));
+//       //reset($keys["clientstr"]);
+//       // $snd_key = key($keys);
+//       // reset($snd_key);
+//       //echo key($keys["clientstr"]);
+     
+//     }
+//     }
+
+
+  // $cc_code = array_column($array_sample, 'clientstr');
+  // $foundKeys = array_search('0AA00', $cc_code);
+  // echo $foundKeys;
+  // print_r($cc_code);
+  // Output:
+
+// 1Array
+// (
+//     [0] => 0FK00
+//     [1] => 0AA00
+// )
+?>
