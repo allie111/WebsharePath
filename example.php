@@ -154,7 +154,32 @@ echo $key . "um ba laaaa";
     echo "Input error";
   }
 }
-  
+  //************************************************************************************************************
+//check if the input contains letter or not. This is belong to the client code with only number that start with 0.
+  if(($input[0] === '0') && (preg_match('/^[0-9]+$/', $input)) &&('0' <= $input && $input <='9999')){
+    $arr_str = str_split($input);
+    $cut = substr($input, 0, 2);
+    echo $cut;
+
+    foreach($array_sample as $key => $value){
+    echo $key;
+    foreach($value as $subkey => $cc_code){
+      echo $subkey;
+      if(substr($cc_code,0 ,2) === $cut ){
+        echo $cc_code;
+        echo "HElloo dummy" . $key;
+        echo $array_sample[$key]["webshare"];
+      }
+    }
+  }
+  }
+  else{
+    echo "Error";
+  }
+
+
+//*******************************************************************************************************************
+  //}
 //   $result = array_filter($this->request->post['clientstr'], function($value, $key){
 //     return $value["clientstr"] === '0AA00';
 // }, ARRAY_FILTER_USE_BOTH);
