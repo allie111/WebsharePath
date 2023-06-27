@@ -1,0 +1,62 @@
+<?php
+$ap_sessionsvr_array = array();
+$ap_sessionsvr_array['DB00']['serverdesc']					= 'DataStore00(clients 00000-01799)';
+$ap_sessionsvr_array['DB00']['mysql_host']	    			= "127.0.0.1";
+$ap_sessionsvr_array['DB00']['mysql_user']	    			= "pcm_task_2020";
+$ap_sessionsvr_array['DB00']['mysql_pass']	    			= "Q@2_T@sk_P@y8";
+$ap_sessionsvr_array['DB00']['mysql_db']	    			= "dbpcm";
+$ap_sessionsvr_array['DB00']['mysql_ver']	    			= "3";
+$ap_sessionsvr_array['DB00']['mysql_port']	    			= "34000";
+$ap_sessionsvr_array['DB00']['wsshare']	    				= "\\\\prodsan-okc-h01-cltst.paycomhq.com\\QAWSSH$\\DFW\\DB00\\";
+$ap_sessionsvr_array['DB00']['docshare']	    			= "\\\\prodsan-okc-h01-cltst.paycomhq.com\\QAWSSH$\\DFW\\DB00\\";
+$ap_sessionsvr_array['DB00']['docshare_docmgmtonly']	    = "\\\\prodsan-okc-h01-cltst\\qawssh$\\DFW\\DB00\\";
+$ap_sessionsvr_array['DB00']['accuengine']	    			= "\\\\192.168.152.190\\pcmwsapps$\\DFW2500\\";
+$ap_sessionsvr_array['DB00']['clientstr']					= "00000";
+$ap_sessionsvr_array['DB00']['clientend']					= "01799";
+$ap_sessionsvr_array['DB00']['totalclients']				= "1800";
+
+$ap_sessionsvr_array['DB02']['serverdesc']	    			= 'DataStore02(clients 01800-02999)';
+$ap_sessionsvr_array['DB02']['mysql_host']	    			= "127.0.0.1";
+$ap_sessionsvr_array['DB02']['mysql_user']	    			= "pcm_task_2020";
+$ap_sessionsvr_array['DB02']['mysql_pass']	    			= "Q@2_T@sk_P@y8";
+$ap_sessionsvr_array['DB02']['mysql_db']	    			= "dbpcm";
+$ap_sessionsvr_array['DB02']['mysql_ver']	    			= "3";
+$ap_sessionsvr_array['DB02']['mysql_port']	    			= "34002";
+$ap_sessionsvr_array['DB02']['wsshare']						= "\\\\prodsan-okc-h01-cltst.paycomhq.com\\QAWSSH$\\DFW\\DB02\\";
+$ap_sessionsvr_array['DB02']['docshare']	    			= "\\\\prodsan-okc-h01-cltst.paycomhq.com\\QAWSSH$\\DFW\\DB02\\";
+$ap_sessionsvr_array['DB02']['docshare_docmgmtonly']	    = "\\\\prodsan-okc-h01-cltst\\qawssh$\\DFW\\DB02\\";
+$ap_sessionsvr_array['DB02']['accuengine']	    			= "\\\\192.168.152.190\\pcmwsapps$\\DFW2502\\";
+$ap_sessionsvr_array['DB02']['clientstr']      				= "01800";
+$ap_sessionsvr_array['DB02']['clientend']      				= "02999";
+$ap_sessionsvr_array['DB02']['totalclients']   				= "1200";
+
+$ap_sessionsvr_array['DB03']['serverdesc']	    			= 'DataStore03(clients 03000-03999)';
+$ap_sessionsvr_array['DB03']['mysql_host']	    			= "127.0.0.1";
+$ap_sessionsvr_array['DB03']['mysql_user']	    			= "pcm_task_2020";
+$ap_sessionsvr_array['DB03']['mysql_pass']	    			= "Q@2_T@sk_P@y8";
+$ap_sessionsvr_array['DB03']['mysql_db']	    			= "dbpcm";
+$ap_sessionsvr_array['DB03']['mysql_ver']	    			= "3";
+$ap_sessionsvr_array['DB03']['mysql_port']	    			= "34003";
+$ap_sessionsvr_array['DB03']['wsshare']						= "\\\\prodsan-okc-h01-cltst.paycomhq.com\\QAWSSH$\\DFW\\DB03\\";
+$ap_sessionsvr_array['DB03']['docshare']	    			= "\\\\prodsan-okc-h01-cltst.paycomhq.com\\QAWSSH$\\DFW\\DB03\\";
+$ap_sessionsvr_array['DB03']['docshare_docmgmtonly']	    = "\\\\prodsan-okc-h01-cltst\\qawssh$\\DFW\\DB03\\";
+$ap_sessionsvr_array['DB03']['accuengine']	    			= "\\\\192.168.152.190\\pcmwsapps$\\DFW2503\\";
+$ap_sessionsvr_array['DB03']['clientstr']      				= "03000";
+$ap_sessionsvr_array['DB03']['clientend']      				= "03999";
+$ap_sessionsvr_array['DB03']['totalclients']   				= "1000";
+
+$ap_sessionsvr_array['DB04']['serverdesc']	    			= 'DataStore04(clients 04000-09999)';
+$ap_sessionsvr_array['DB04']['mysql_host']	    			= "127.0.0.1";
+$ap_sessionsvr_array['DB04']['mysql_user']	    			= "pcm_task_2020";
+$ap_sessionsvr_array['DB04']['mysql_pass']	    			= "Q@2_T@sk_P@y8";
+$ap_sessionsvr_array['DB04']['mysql_db']	    			= "dbpcm";
+$ap_sessionsvr_array['DB04']['mysql_ver']	    			= "3";
+$ap_sessionsvr_array['DB04']['mysql_port']	    			= "34004";
+$ap_sessionsvr_array['DB04']['wsshare']						= "\\\\prodsan-okc-h01-cltst.paycomhq.com\\QAWSSH$\\DFW\\DB04\\";
+$ap_sessionsvr_array['DB04']['docshare']	    			= "\\\\prodsan-okc-h01-cltst.paycomhq.com\\QAWSSH$\\DFW\\DB04\\";
+$ap_sessionsvr_array['DB04']['docshare_docmgmtonly']	    = "\\\\prodsan-okc-h01-cltst\\qawssh$\\DFW\\DB04\\";
+$ap_sessionsvr_array['DB04']['accuengine']	    			= "\\\\192.168.152.190\\pcmwsapps$\\DFW2504\\";
+$ap_sessionsvr_array['DB04']['clientstr']      				= "04000";
+$ap_sessionsvr_array['DB04']['clientend']      				= "09999";
+$ap_sessionsvr_array['DB04']['totalclients']   				= "6000";
+?>
