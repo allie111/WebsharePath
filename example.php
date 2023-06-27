@@ -1,225 +1,212 @@
 <?php
-//  $input_cc = readline("ENTER: ");
-// if($input_cc[0] == '0'){
-//     echo " it is 0 " .$input_cc;
-//     //check the second digit
-//     //if 2nd digit contains only number 
-//     if (is_numeric((int)$input_cc)){
-       
-//         echo gettype((int)$input_cc);
-//     }
-//     if(0 <= (int)$input_cc && (int)$input_cc <=9999 ){
-//         echo "NUMBER!";
-
-        
-//     }
-//}
-
-
 
 $array_sample = array();
-$array_sample["DB05"]["webshare"] = "HELLO";
+$array_sample["DB01"]["webshare"] = "\\\\prodsan-okc-m\\QAWSSH$\\OKC\\DB01\\";
+$array_sample["DB01"]["clientstr"] = "01100";
+$array_sample["DB05"]["webshare"] = "\\\\prodsan-okc-m\\QAWSSH$\\OKC\\DB05\\";
+$array_sample["DB05"]["clientstr"] = "0A100";
 $array_sample["DB10"]["webshare"] = "\\\\prodsan-okc-m\\QAWSSH$\\OKC\\DB91\\";
 $array_sample["DB10"]["clientstr"] = "0FK00";
 $array_sample["DB11"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB91\\";
 $array_sample["DB11"]["clientstr"] = "0AA00";
+$array_sample["DB12"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB12\\";
+$array_sample["DB12"]["clientstr"] = "0BE00";
+$array_sample["DB13"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB13\\";
+$array_sample["DB13"]["clientstr"] = "0DJ00";
+$array_sample["DB14"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB14\\";
+$array_sample["DB14"]["clientstr"] = "0FF00";
+$array_sample["DB15"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB15\\";
+$array_sample["DB15"]["clientstr"] = "0QX14";
 
-// // echo "get the value" . $array_sample['DB10']["webshare"];
-echo $array_sample["DB11"]["webshare"];
-// echo gettype($array_sample["DB11"]["clientstr"]);
+$array_sample["DB65"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB65\\";
+$array_sample["DB65"]["clientstr"] = "10000";
+$array_sample["DB65"]["clientend"] = "10299";
 
-// echo "get the value" . $array_sample['DB10']["webshare"];
-// $level = $array_sample["DB11"]["clientstr"];
-// echo gettype($array_sample["DB11"]["clientstr"]);
+$array_sample["DB64"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB64\\";
+$array_sample["DB64"]["clientstr"] = "10300";
+$array_sample["DB64"]["clientend"] = "10599";
+
+$array_sample["DB66"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB66\\";
+$array_sample["DB66"]["clientstr"] = "10600";
+$array_sample["DB66"]["clientend"] = "10899";
+
+$array_sample["DB67"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB66\\";
+$array_sample["DB67"]["clientstr"] = "10900";
+$array_sample["DB67"]["clientend"] = "10B99";
 
 
+$array_sample["DB68"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB68\\";
+$array_sample["DB68"]["clientstr"] = "11900";
+$array_sample["DB68"]["clientend"] = "11B99";
 
-// $client_code = preg_split('//', $input_cc, -1, PREG_SPLIT_NO_EMPTY);
-// if(array_map("is_numeric", $client_code)){
+$array_sample["DB69"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB69\\";
+$array_sample["DB69"]["clientstr"] = "11C00";
+$array_sample["DB69"]["clientend"] = "11E99";
 
-//     echo " TRUE NUMBER!";
-// print_r( $array_sample);
-// //$key = array_search('0FK00', array_column($array_sample, 'clientstr'));
-// print_r(array_column($array_sample, "clientstr"));
-///print_r(array_filter($array_sample, '0AA00'));
-//print_r(array_keys($array_sample,'0AA00'));
-$array = array();
-foreach($array_sample as $key => $array_sample){
-    print_r(gettype($key));
-    array_push($array, $key);
-    if(is_array($innerArray)){
-        foreach ($innerArray as $value){
-            echo $value;
-        }
-    }
-        else{
-            echo $innerArray;
-        }
-//    if($array_sample[$key]['clientstr'] === '0AA00'){
-//     echo "GHEEEEEE";
-//    }
-}
-echo gettype($array_sample["DB11"]["webshare"]);
-print_r($array);
-foreach($array as $keys){
-    echo "jjjjjjjjjjjjjjj". $keys;
-    echo gettype($keys);
-   
-    }
-    // print_r($array_sample[$keys]['clientstr']);
-    // echo $array_sample[$keys]['clientstr'];
-    // if($array_sample[$keys]['clientstr'] ='0AA00'){
-    //     echo "jflajlakjfjsa" .$array_sample[$keys]['clientstr'];
-    //     //echo $keys;
-    //     echo gettype($keys);
-    //     //get path 
-    //     // $array_sample[$keys]["webshare"];
-    //     return $keys;
+$input= readline("ENTER: ");
+function webshare($input_cc, $array_sample1){
+    if(strlen($input_cc) == 5){
+        if($input_cc[0] === '0'){
+            echo " it is 0 " .$input_cc;
+            //check the second digit
+            //if 2nd digit contains only number 
+            if(preg_match('/^[0-9]+$/', $input_cc)){
+            
+                //echo gettype($input_cc);
+                $cut = substr($input_cc, 0, 2);
+                //echo $cut;
+            
+                foreach($array_sample1 as $key => $value){
+                //echo $key;
+                foreach($value as $subkey => $cc_code){
+                //echo $subkey;
+                if(substr($cc_code,0 ,2) === $cut ){
+                    echo $cc_code;
+                    echo "HElloo dummy" . $key;
+                    echo $array_sample1[$key]["webshare"];
+                }
+                }
+            }
+            }
 
-    // }
-//}
-//$key = array_search('0AA00', array_filter(array_combine(array_keys($array_sample, array_column($array_sample, 'clientstr')))));
-echo $key . "um ba laaaa";
-//     $key_level = "DB".$client_code[0].$client_code[1];
-//     echo $key_level;
-//     echo gettype($key_level);
-//     if(array_key_exists($key_level, $array_sample)){
-//         //echo $DBlevel10_35[$input_cc]; //output the level
-//         //find the path through given level
-//       // $arrayKeys = array_keys($array_sample);
-//         //if(array_key_exists($input_cc[1], $DBlevel10_35)){
-//            // $level_number = $DBlevel10_35[$input_cc[1]]; //output the level
-//            // $match_level = str_contains($level_number, $arrayKeys);
-//            //$matching_key = array_key_exists($key_level, $arrayKeys);
-//            echo "get the value WOOHOO from 0 - 9999" . $array_sample[$key_level]["webshare"];
-//         }
+
+        elseif(preg_match('([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z])', $input_cc)){
         
-//     }
+        
+            echo "not all number" . gettype($input_cc);
+            $array_str = str_split($input_cc, 1);
+            $array_letter =array();
+                
+                foreach($array_str as $letter => $get_letter){
+                    echo $get_letter ;
+                    echo "- ";
+                    if(!(is_numeric($get_letter))){
+                        echo $get_letter;
+                        // echo $letter; thisi is the postion 
+                        echo "this is letter";
+                        array_push($array_letter, $get_letter); 
+                    }
+                    
+                }
+                print_r($array_letter);
+                $oneLetter = implode($array_letter);
+                echo $oneLetter;
+                // //use for one letter 
+                if(sizeof($array_letter) == 1){
+                    //$oneLetter = implode($array_letter);
+                    foreach($array_sample1 as $key => $value){
+                        //echo $key;
+                        foreach($value as $subkey => $cc_code){
+                          //echo $subkey;
+                          if($cc_code[1] === $oneLetter && !('A' <= $cc_code[2] && $cc_code[2] <='Z') ){
+                            //echo $cc_code;
+                            //echo "HElloo dummy" . $key;
+                            echo $array_sample1[$key]["webshare"];
+                          }
+                        }
+                      }
+                }
 
-    
-
-?>
-
-
-
-//**********************************************************************************************************
-//GOOD DRAF DONT DELETE
-
-
-<?php
-// 	echo "Hello, World!";
-	
-	$array_sample = array();
-  $array_sample["DB05"]["webshare"] = "HELLO";
-  $array_sample["DB10"]["webshare"] = "\\\\prodsan-okc-m\\QAWSSH$\\OKC\\DB91\\";
-  $array_sample["DB10"]["clientstr"] = "0FK00";
-  $array_sample["DB11"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB91\\";
-  $array_sample["DB11"]["clientstr"] = "0AA00";
-  $array_sample["DB12"]["webshare"] = "\\\\p.paycomhq.com\\QAWSSH$\\OKC\\DB91\\";
-  $array_sample["DB12"]["clientstr"] = "02600";
-  
-  $input = readline(" Enter the client code with 5 digits: ")
-  function webshare_path($input){
-    if(strlen($input) == 5){
-      if($input[0] === '0'){
-        if('0' <= $input <='9999'){
-          foreach($array_sample as $key => $value){
-          echo $key;
-          foreach($value as $subkey => $cc_code){
-            echo $subkey;
-            if($cc_code === $input ){
-              echo $cc_code;
-              echo "HElloo dummy" . $key;
-              echo $array_sample[$key]["webshare"];
+                elseif(sizeof($array_letter) >= 2){ //2 letter inside the client code
+                    foreach($array_sample1 as $key => $value){
+                        //echo $key;
+                        foreach($value as $subkey => $cc_code){
+                          //echo $subkey;
+                          //if(('A' <= $cc_code[1] && $cc_code[1] <='Z') && ('A' <= $cc_code[2] && $cc_code[2] <='E')  ){
+                            //use oneLetter to find the DBlevel
+                            if(preg_match('/^[A-Za-z]+$/', $cc_code[1]) && preg_match('/^[A-Ea-e]+$/', $cc_code[2]) && $cc_code[1] === $oneLetter[0] && $cc_code[2] === $oneLetter[1] ){
+                            
+                                echo $array_sample1[$key]["webshare"];
+                            }
+                            elseif(preg_match('/^[A-Za-z]+$/', $cc_code[1]) && preg_match('/^[F-Jf-j]+$/', $cc_code[2]) && $cc_code[1] === $oneLetter[0] && $cc_code[2] === $oneLetter[1] ){
+                                
+                                    echo $array_sample1[$key]["webshare"];
+                            }
+                            elseif(preg_match('/^[A-Za-z]+$/', $cc_code[1]) && preg_match('/^[K-Ok-o]+$/', $cc_code[2]) && $cc_code[1] === $oneLetter[0] && $cc_code[2] === $oneLetter[1] ){
+                                
+                                    echo $array_sample1[$key]["webshare"];
+                            }
+                            elseif(preg_match('/^[A-Za-z]+$/', $cc_code[1]) && preg_match('/^[P-Tp-t]+$/', $cc_code[2]) && $cc_code[1] === $oneLetter[0] && $cc_code[2] === $oneLetter[1] ){
+                                
+                                echo $array_sample1[$key]["webshare"];
+                            }
+                            elseif(preg_match('/^[A-Za-z]+$/', $cc_code[1]) && preg_match('/^[U-Wu-w]+$/', $cc_code[2]) && $cc_code[1] === $oneLetter[0] && $cc_code[2] === $oneLetter[1] ){
+                                
+                                echo $array_sample1[$key]["webshare"];
+                            }
+                            elseif(preg_match('/^[A-Za-z]+$/', $cc_code[1]) && preg_match('/^[X-Zx-z]+$/', $cc_code[2]) && $cc_code[1] === $oneLetter[0] && $cc_code[2] === $oneLetter[1] ){
+                                
+                                echo $array_sample1[$key]["webshare"];
+                        }
+                        }
+                      }
+                }
+                
             }
-          }
+
         }
-        }
-      }
-      elseif($input[0] === '1'){
-        foreach($array_sample as $key => $value){
-          echo $key;
-          foreach($value as $subkey => $cc_code){
-            echo $subkey;
-            if($cc_code === $input ){
-              echo $cc_code;
-              echo "HElloo dummy" . $key;
-              echo $array_sample[$key]["webshare"];
+
+        //client code start with 1 or greater
+        elseif($input_cc[0] >=1){
+            //check if input is numeric string without letter.
+            if (preg_match('/^[0-9]+$/', $input_cc)){
+               //DB level divide 300 clients for each level 0 ->299 for digit 2-5, 0-1 need to compare
+               foreach($array_sample1 as $key => $value){
+                //echo $key;
+                foreach($value as $subkey => $cc_code){
+                  //echo $subkey;
+                  $substr_3lastdigit = substr($input_cc, 2, 3); //234
+                  $substr_2firstdigit = substr($input_cc, 0, 2);//10
+                  //check if the first 2 numeric are the same and if the last 3 numeric in range of 0 -299
+                    if($substr_2firstdigit  === substr($cc_code, 0, 2) && ('0' <= substr($cc_code, 2, 5) && substr($cc_code, 2, 5) <=' 299') && ('0' <= $substr_3lastdigit && $substr_3lastdigit <=' 299')) {
+        
+                        echo $array_sample1[$key]['webshare'];
+                    
+                     }
+                    elseif($substr_2firstdigit  === substr($cc_code, 0, 2) && ('300' <= substr($cc_code, 2, 5) && substr($cc_code, 2, 5) <=' 599') && ('300' <= $substr_3lastdigit && $substr_3lastdigit <=' 599')) {
+        
+                        echo $array_sample1[$key]['webshare'];
+                    
+                    }
+                    elseif($substr_2firstdigit  === substr($cc_code, 0, 2) && ('600' <= substr($cc_code, 2, 5) && substr($cc_code, 2, 5) <=' 899') && ('600' <= $substr_3lastdigit && $substr_3lastdigit <=' 899')) {
+        
+                        echo $array_sample1[$key]['webshare'];
+                        
+                    }
+                    elseif($substr_2firstdigit  === substr($cc_code, 0, 2) && ('900' <= substr($cc_code, 2, 5) && substr($cc_code, 2, 5) <=' B99') && ('900' <= $substr_3lastdigit && $substr_3lastdigit <=' B99')) {
+        
+                        echo $array_sample1[$key]['webshare'];
+                        
+                    }
+                }
+              }
+               // echo gettype($input_cc);
             }
-          }
-        }
-      }
-    }
-    else{
-    echo "Input error";
-  }
+
+            else{
+                $substr_3rddigit = $input_cc[2]; //ge the middle letter
+                $substr_2firstdigit = substr($input_cc, 0, 2);//10
+                foreach($array_sample1 as $key => $value){
+                    //echo $key;
+                    foreach($value as $subkey => $cc_code){
+                      //echo 10B45
+                      if(preg_match('/^[C-Ec-e]+$/', $cc_code[2]) && preg_match('/^[C-Ec-e]+$/', $substr_3rddigit)){
+                        if($substr_2firstdigit === substr($cc_code, 0, 2)){
+                            echo $array_sample1[$key]["webshare"];
+                        }
+                       
+            
+                     }
+                    }
+                  }
+            }
+
+
 }
-  //************************************************************************************************************
-//check if the input contains letter or not. This is belong to the client code with only number that start with 0.
-  if(($input[0] === '0') && (preg_match('/^[0-9]+$/', $input)) &&('0' <= $input && $input <='9999')){
-    $arr_str = str_split($input);
-    $cut = substr($input, 0, 2);
-    echo $cut;
-
-    foreach($array_sample as $key => $value){
-    echo $key;
-    foreach($value as $subkey => $cc_code){
-      echo $subkey;
-      if(substr($cc_code,0 ,2) === $cut ){
-        echo $cc_code;
-        echo "HElloo dummy" . $key;
-        echo $array_sample[$key]["webshare"];
-      }
     }
-  }
-  }
-  else{
-    echo "Error";
-  }
 
 
-//*******************************************************************************************************************
-  //}
-//   $result = array_filter($this->request->post['clientstr'], function($value, $key){
-//     return $value["clientstr"] === '0AA00';
-// }, ARRAY_FILTER_USE_BOTH);
-
-// print_r(array_keys($result));
-
-// var_dump(array_filter($array_sample, function($v, $k) {
-//     return $k == '0AA00' || $v == 'clientstr';
-// }, ARRAY_FILTER_USE_BOTH));
-
-// 	foreach($array_sample as $keys){
-//     //echo "jjjjjjjjjjjjjjj ". $keys['client'];
-//     //print_r($keys['client']);
-//     //echo gettype($keys);
-//     print_r($keys);
-//     echo "iam here baby" . $keys["clientstr"];
-//     if($keys["clientstr"] === '0AA00'){
-//       echo "get the keys! Come on! " ;
-//       //($keys["clientstr"]);
-      
-//       //print_r(array_keys($keys["clientstr"]));
-//       //echo gettype(array_keys($keys["clientstr"] === '0AA00'));
-//       //reset($keys["clientstr"]);
-//       // $snd_key = key($keys);
-//       // reset($snd_key);
-//       //echo key($keys["clientstr"]);
-     
-//     }
-//     }
+}
 
 
-  // $cc_code = array_column($array_sample, 'clientstr');
-  // $foundKeys = array_search('0AA00', $cc_code);
-  // echo $foundKeys;
-  // print_r($cc_code);
-  // Output:
-
-// 1Array
-// (
-//     [0] => 0FK00
-//     [1] => 0AA00
-// )
-?>
+webshare($input, $array_sample);
