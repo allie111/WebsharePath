@@ -158,26 +158,22 @@ function webshare($input_cc, $array_sample1){
                   $substr_3lastdigit = substr($input_cc, 2, 3); //234
                   $substr_2firstdigit = substr($input_cc, 0, 2);//10
                   //check if the first 2 numeric are the same and if the last 3 numeric in range of 0 -299
-                    if($substr_2firstdigit  === substr($cc_code, 0, 2) && ('0' <= substr($cc_code, 2, 5) && substr($cc_code, 2, 5) <=' 299') && ('0' <= $substr_3lastdigit && $substr_3lastdigit <=' 299')) {
-        
-                        echo $array_sample1[$key]['webshare'];
-                    
-                     }
-                    elseif($substr_2firstdigit  === substr($cc_code, 0, 2) && ('300' <= substr($cc_code, 2, 5) && substr($cc_code, 2, 5) <=' 599') && ('300' <= $substr_3lastdigit && $substr_3lastdigit <=' 599')) {
-        
-                        echo $array_sample1[$key]['webshare'];
-                    
-                    }
-                    elseif($substr_2firstdigit  === substr($cc_code, 0, 2) && ('600' <= substr($cc_code, 2, 5) && substr($cc_code, 2, 5) <=' 899') && ('600' <= $substr_3lastdigit && $substr_3lastdigit <=' 899')) {
-        
-                        echo $array_sample1[$key]['webshare'];
-                        
-                    }
-                    elseif($substr_2firstdigit  === substr($cc_code, 0, 2) && ('900' <= substr($cc_code, 2, 5) && substr($cc_code, 2, 5) <=' B99') && ('900' <= $substr_3lastdigit && $substr_3lastdigit <=' B99')) {
-        
-                        echo $array_sample1[$key]['webshare'];
-                        
-                    }
+                    if(substr($cc_code, 2,3) === '000' && $substr_2firstdigit  === substr($cc_code, 0, 2)&& ('0'<= $substr_3lastdigit && $substr_3lastdigit<='299') ){
+                    //echo $cc_code;
+                        echo $array_sample[$key]['webshare'];
+                  }
+                    elseif(substr($cc_code, 2,3) === '300' && $substr_2firstdigit  === substr($cc_code, 0, 2)&& ('300'<= $substr_3lastdigit && $substr_3lastdigit<='599') ){
+                    //echo $cc_code;
+                    echo $array_sample[$key]['webshare'];
+                  }
+                    elseif(substr($cc_code, 2,3) === '600' && $substr_2firstdigit  === substr($cc_code, 0, 2)&& ('600'<= $substr_3lastdigit && $substr_3lastdigit<='899') ){
+                    //echo $cc_code;
+                    echo $array_sample[$key]['webshare'];
+                  }
+                    elseif(substr($cc_code, 2,3) === '900' && $substr_2firstdigit  === substr($cc_code, 0, 2)&& ('900'<= $substr_3lastdigit && $substr_3lastdigit<='998') ){
+                    //echo $cc_code;
+                    echo $array_sample[$key]['webshare'];
+                  }
                 }
               }
                // echo gettype($input_cc);
