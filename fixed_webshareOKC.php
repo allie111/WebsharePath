@@ -182,19 +182,21 @@ function webshare($input_cc, $array_sample1){
             else{
                 $substr_3rddigit = $input_cc[2]; //ge the middle letter
                 $substr_2firstdigit = substr($input_cc, 0, 2);//10
+                $array_samepath = array();
                 foreach($array_sample1 as $key => $value){
                     //echo $key;
                     foreach($value as $subkey => $cc_code){
                       //echo 10B45
                       if(preg_match('/^[C-Ec-e]+$/', $cc_code[2]) && preg_match('/^[C-Ec-e]+$/', $substr_3rddigit)){
                         if($substr_2firstdigit === substr($cc_code, 0, 2)){
-                            echo $array_sample1[$key]["webshare"];
+                            array_push($array_samepath, $array_sample1[$key]["webshare"]);
                         }
                        
             
                      }
                     }
                   }
+                echo $array_samepath[0];
             }
 
 
